@@ -5,12 +5,19 @@
 </template>
 
 <script type="es6">
+import getRecommend from 'api/getRecommend'
 export default {
   methods: {
-    getRecommend: (url, data) => {
+    getR: function () {
+      getRecommend('https://c.y.qq.com/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg', {
+        type: 'jsop',
+        'jsonp': ''
+      })
     }
   },
-  mounted: () => {
+  mounted () {
+    console.log('20')
+    this.getR()
   }
 }
 </script>
