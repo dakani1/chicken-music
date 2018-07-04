@@ -1,10 +1,37 @@
 <template>
-    <div>排名</div>
+    <div class="rank">
+      <div>
+        {{pms}}
+        {{getSinger}} <br/>
+      </div>
+    </div>
 </template>
 
-<script type="es6">
-export default {}
+<script>
+import {mapGetters, mapMutations} from 'vuex'
+export default {
+  data () {
+    return {
+      pms: this.$route.params.id
+    }
+  },
+  methods: {
+    ...mapMutations([
+      'setSingers', 'setSingers2'
+    ])
+  },
+  computed: {
+    ...mapGetters([
+      'getSinger', 'getSinger2'
+    ])
+  },
+  mounted: function () {
+    this.setSingers2('new');
+  }
+}
 </script>
+<style scoped lang="scss" rel="stylesheet/sass">
+  .rank{
 
-<style>
+  }
 </style>

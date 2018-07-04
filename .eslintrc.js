@@ -11,7 +11,7 @@ module.exports = {
   extends: [
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
     // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-    'plugin:vue/essential',
+    'plugin:vue/essential', 
     // https://github.com/standard/standard/blob/master/docs/RULES-en.md
     'standard'
   ],
@@ -25,9 +25,8 @@ module.exports = {
     'generator-star-spacing': 'off',
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    //不检测文件最后末尾是否为空行
-    'eol-last': 0,
-    //不检测函数括号左边是否有空格
-    "space-before-function-paren": 0
+    'eol-last': 0 , ///新文件末尾是否有空行
+    'space-between-function-paren': 'never',
+    'semi': 0
   }
 }

@@ -10,11 +10,11 @@ export default {
 </script>
 
 <style scoped lang="scss" rel="stylesheet/sass">
-  @import '../../common/css/color.scss';
+  @import 'common/sass/variable.scss';
   .music-header {
     display:table;
     width:100%;
-    background-color: $bgcolor;
+    background-color: $color-background ;
     div{
       height:60px;
       display:table-cell;

@@ -32,12 +32,14 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json', '.css', '.scss'],
+    extensions: ['.js', '.vue', '.json'],
     alias: {
+      'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
-      'components': resolve('src/components'),
-      'common': resolve('src/common'),
       'api': resolve('src/api'),
+      'common': resolve('src/common'),
+      'components': resolve('src/components'),
+      'base': resolve('src/base'),
     }
   },
   module: {
@@ -54,8 +56,8 @@ module.exports = {
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
       {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader!sass-loader'
+        test: /\.scss$/,
+        loader: ['sass', 'style', 'css']
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,

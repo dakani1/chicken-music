@@ -1,28 +1,36 @@
 <template>
-    <div class="header-tab">
-      <router-link tag="div" to="/recommend">推荐</router-link>
-      <router-link tag="div" to="/rank">排名</router-link>
-      <router-link tag="div" to="/singer">歌手</router-link>
-      <router-link tag="div" to="/search">搜索</router-link>
+    <div class="tabNav">
+        <ul class="tabNavUl">
+            <router-link tag="li" to="/recommend"><span>推荐</span></router-link>
+            <router-link tag="li" to="/singer"><span>歌手</span></router-link>
+            <router-link tag="li" to="/rank"><span>排行</span></router-link>
+            <router-link tag="li" to="/search"><span>搜索</span></router-link>
+        </ul>
     </div>
 </template>
 
 <script type="es6">
-export default {}
+export default {
+}
 </script>
 
-<style lang="scss" scoped>
-.header-tab{
-  display: flex;
-  display: -webkit-flex;
-  background-color: #333;
-  div{
-    flex: 1;
-    line-height:32px;
-    color:white;
-  }
-  div.router-link-active{
-    color: #d19308;
-  }
+<style scoped lang="scss" rel="stylesheet/sass">
+@import "common/sass/variable.scss";
+.tabNavUl{
+    display: flex;
+    display: -webkit-flex;
+    li{
+        flex: 1;
+        text-align: center;
+        cursor: pointer;
+    }
+    .router-link-active{
+       span{
+            color: $color-theme;
+            padding-bottom:3px;
+            display:inline-block;
+            border-bottom: 2px solid $color-theme;
+       }
+    }
 }
 </style>
